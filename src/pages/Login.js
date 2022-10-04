@@ -33,7 +33,7 @@ class Login extends React.Component {
     this.setState({ loading: true });
 
     await createUser({ name: loginName });
-    history.push('/search');
+    history.push('/search'); // dica da Lígia Bicalho. O history é uma prop nativa que armazena caminhos
 
     this.setState({
       loading: false,
