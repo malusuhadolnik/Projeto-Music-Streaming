@@ -13,9 +13,9 @@ class MusicCard extends React.Component {
     };
   }
 
-  async componentDidMount() {
-    await this.getFavesList();
-  }
+  // componentDidMount() {
+  //   this.getFavesList();
+  // }
 
   // o que handleChange deve fazer: ao clicar na caixa, a música em questão (target) deve ser
   // passada como parâmetro para addSong (requisito 8)
@@ -30,35 +30,26 @@ class MusicCard extends React.Component {
         loading: false,
         [name]: checked,
       },
+      this.getFavesList,
     );
   };
 
   // requisito 9
-  getFavesList = async () => {
-    // this.setState({ loading: true });
+  getFavesList = () => {
     // const result = await getFavoriteSongs();
-
     // const { song } = this.props;
-    // const isItFave = result.some((element) => element.trackId === song.trackId); // fave song list virá via prop
+    // const isItFave = result.some((element) => element.trackId === song.trackId);
 
     const { song, faveSongsList } = this.props;
-    console.log(`prop ${faveSongsList}`);
-    console.log(`prop ${song}`);
-    const isItFave = await faveSongsList
-      .some((element) => element.trackId === song.trackId); // fave song list virá via prop
-
-    console.log(`const ${isItFave}`);
-    console.log(`prop ${faveSongsList} depois de isItFave`);
+    const isItFave = faveSongsList
+      .some((element) => element.trackId === song.trackId);
 
     if (isItFave === true) {
       this.setState({
-        loading: false,
         // faveSongsList: result,
         favourite: true,
       });
     }
-
-    console.log('função getFaveList é executada');
   };
 
   render() {
