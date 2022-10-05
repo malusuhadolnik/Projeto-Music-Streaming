@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class Album extends React.Component {
   constructor() {
@@ -11,11 +12,13 @@ class Album extends React.Component {
     this.state = {
       albumSongs: [],
       albumData: {},
+      faveSongsList: [],
     };
   }
 
   componentDidMount() {
     this.getAlbumSongs();
+    this.fetchFavourite();
   }
 
   getAlbumSongs = async () => {
@@ -28,8 +31,17 @@ class Album extends React.Component {
     });
   };
 
+  fetchFavourite = async () => {
+    this.setState({ loading: true });
+    const result = await getFavoriteSongs();
+    this.setState({
+      loading: false,
+      faveSongsList: result,
+    });
+  };
+
   render() {
-    const { albumSongs, albumData } = this.state;
+    const { albumSongs, albumData, loading, faveSongsList } = this.state;
 
     return (
       <div data-testid="page-album">
@@ -41,10 +53,14 @@ class Album extends React.Component {
         <div>
           { albumSongs.map((song) => (
             <li key={ song.trackId }>
-              <MusicCard song={ song } />
+              <MusicCard
+                song={ song }
+                faveSongsList={ faveSongsList }
+              />
             </li>
           ))}
         </div>
+        {loading && <p>Carregando...</p>}
       </div>
     );
   }
