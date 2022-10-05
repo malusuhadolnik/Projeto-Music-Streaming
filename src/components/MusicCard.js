@@ -13,13 +13,13 @@ class MusicCard extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   this.getFavesList();
-  // }
+  componentDidMount() {
+    this.getFavesList();
+  }
 
   // o que handleChange deve fazer: ao clicar na caixa, a música em questão (target) deve ser
   // passada como parâmetro para addSong (requisito 8)
-  handleChange = async ({ target: { name, checked } }) => { // a função do onChange deve receber um target
+  handleChange = async ({ target: { name, checked } }) => { 
     const { song } = this.props;
     this.setState({ loading: true });
 
@@ -36,6 +36,7 @@ class MusicCard extends React.Component {
 
   // requisito 9
   getFavesList = () => {
+    // código anterior à utilização da lista de favoritos como prop:
     // const result = await getFavoriteSongs();
     // const { song } = this.props;
     // const isItFave = result.some((element) => element.trackId === song.trackId);
@@ -43,12 +44,13 @@ class MusicCard extends React.Component {
     const { song, faveSongsList } = this.props;
     const isItFave = faveSongsList
       .some((element) => element.trackId === song.trackId);
-
+    console.log(faveSongsList);
     if (isItFave === true) {
       this.setState({
         // faveSongsList: result,
         favourite: true,
       });
+      console.log(isItFave);
     }
   };
 
