@@ -18,7 +18,6 @@ class Header extends React.Component {
 
   requestUserName = async () => {
     const response = await getUser(); // ATENÇÂO! Retorna um objeto, cuja chave que queremos é name
-    console.log(response);
 
     this.setState({
       loading: false,
