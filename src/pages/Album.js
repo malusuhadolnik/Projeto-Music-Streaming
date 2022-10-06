@@ -18,27 +18,27 @@ class Album extends React.Component {
 
   componentDidMount() {
     this.getAlbumSongs();
-    this.fetchFavourite();
   }
 
   getAlbumSongs = async () => {
     const { match: { params: { id } } } = this.props;
     const response = await getMusics(id);
     const songs = response.filter((song) => song.kind === 'song'); // quando filtrei pela chave "wrapperType" não deu certo! Mas esta funcionou
-    this.setState({
-      albumSongs: songs,
-      albumData: response[0],
-    });
+    const result = await getFavoriteSongs();
+
+    this.setState(
+      {
+        albumSongs: songs,
+        albumData: response[0],
+        faveSongsList: result,
+      },
+    );
   };
 
-  fetchFavourite = async () => {
-    this.setState({ loading: true });
-    const result = await getFavoriteSongs();
-    this.setState({
-      loading: false,
-      faveSongsList: result,
-    });
-  };
+  // Observação: precisei colocar em uma única função a requisição de getMusics e getFavoriteSongs,
+  // pois ao chamar ambas separadamente em componentDidMount, gerava um conflito e as caixinhas de Favorita não permaneciam
+  // marcadas após atualização na página. Também não deu certo colocar alguma delas em componentDidUpdate, pois quebrava a
+  // aplicação.
 
   render() {
     const { albumSongs, albumData, loading, faveSongsList } = this.state;
