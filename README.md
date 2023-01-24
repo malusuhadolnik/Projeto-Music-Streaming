@@ -1,5 +1,3 @@
-# :construction: README customizado em construção ! :construction:
-<!-- 
 # Projeto Music Streaming -  :construction: Em Construção!  :construction:
 
 # Sobre
@@ -27,6 +25,3 @@ npm install
   ```
     cd src/ && npm start
   ```
-
-Criar links de navegação na aplicação com o componente Link;
--->
