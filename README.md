@@ -1,31 +1,32 @@
 # :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Neste projeto você irá criar o TrybeTunes, uma aplicação capaz de reproduzir músicas das mais variadas bandas e artistas, criar uma lista de músicas favoritas e editar o perfil da pessoa usuária logada. Essa aplicação será capaz de:
+<!-- 
+# Projeto Music Streaming -  :construction: Em Construção!  :construction:
 
-Fazer login;
-Pesquisar por uma banda ou artista;
-Listar os álbuns disponíveis dessa banda ou artista;
-Visualizar as músicas de um álbum selecionado;
-Reproduzir uma prévia das músicas deste álbum;
-Favoritar e desfavoritar músicas;
-Ver a lista de músicas favoritas;
-Ver o perfil da pessoa logada;
-Editar o perfil da pessoa logada;
-memo Habilidades
+# Sobre
+Este projeto foi desenvolvido durante o Módulo 2 - Front-End do curso de Desenvolvimento Web da Trybe. Atualmente estou fazendo algumas modificações.
 
-Neste projeto, verificamos se você é capaz de:
+Esta aplicação construída em React.js consiste em um site de streaming de de músicas que consome a API do iTunes. A pessoa usuária poderá navegar por diversas páginas ao logar, criar um perfil, pesquisar por artistas e bandas, visualizar álbuns disponíveis, reproduzir uma prévia das faixas e criar uma lista de favoritas. 
 
-Fazer requisições e consumir dados vindos de uma API;
+Os arquivos desenvolvidos por mim estão nas pastas pages e components.
 
-Utilizar os ciclos de vida de um componente React;
+Os demais foram desenvolvidos pelo time da Trybe.
 
-Utilizar a função setState de forma a garantir que um determinado código só é executado após o estado ser atualizado
+## Técnologias usadas
 
-Utilizar o componente BrowserRouter corretamente;
+React.js, Javascript.
 
-Criar rotas, mapeando o caminho da URL com o componente correspondente, via Route;
+## Instalando Dependências
 
-Utilizar o Switch do React Router
+```bash
+cd src/
+npm install
+``` 
+
+## Executando aplicação
+
+  ```
+    cd src/ && npm start
+  ```
 
 Criar links de navegação na aplicação com o componente Link;
 -->
