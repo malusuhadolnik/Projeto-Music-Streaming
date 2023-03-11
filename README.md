@@ -1,4 +1,4 @@
-# Projeto Music Streaming -  :construction: Em Construção!  :construction:
+# Projeto Music Streaming 
 
 # Sobre
 Este projeto foi desenvolvido durante o Módulo 2 - Front-End do curso de Desenvolvimento Web da Trybe. Atualmente estou fazendo algumas modificações.
